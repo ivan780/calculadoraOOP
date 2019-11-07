@@ -1,11 +1,8 @@
 window.onload = function () {
-    console.log("Windows.onload()");
-
-    class AppCalculator {
-        constructor() {
-            console.log("Objeto AppCalculator creado")
-        }
+    console.log(document.readyState);
+    if (document.readyState === "complete"){
+        let pantallaHtml = document.getElementById("pantallaCalculadora");
+        let appCalculadora = new AppCalculator(pantallaHtml);
+        appCalculadora.printPantalla("hola");
     }
-
-    let appCalculadora = new AppCalculator();
 };
