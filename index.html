@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+<body>
+<div id="calculadora">
+    <div id="pantalla">
+        <input type="text" id="pantallaCalculadora">
+    </div>
+
+    <div id="operation">
+        <input type="button" id="opC" onclick="clean()" value="C">
+        <input type="button" id="opCE" onclick="fullClean()" value="CE">
+        <input type="button" id="opMmas" onclick="memoriaView()" value="MR">
+        <input type="button" id="opMmenos" onclick="memoriaSave()" value="MS">
+        <br>
+        <input type="button" id="opElevar" onclick="operaciones('**')" value="^">
+        <input type="button" id="opDividir" onclick="operaciones('/')" value="/">
+        <input type="button" id="opBackspace" onclick="backspace()" value="⌫">
+        <br>
+        <input type="button" id="opSumar" onclick="operaciones('+')" value="+">
+        <input type="button" id="opRestar" onclick="operaciones('-')" value="-">
+        <input type="button" id="opMultiplicar" onclick="operaciones('*')" value="*">
+    </div>
+
+    <div id="numbers">
+        <input type="button" id="button9" onclick="numbers('9')" value="9">
+        <input type="button" id="button8" onclick="numbers('8')" value="8">
+        <input type="button" id="button7" onclick="numbers('7')" value="7">
+        <br>
+        <input type="button" id="button6" onclick="numbers('6')" value="6">
+        <input type="button" id="button5" onclick="numbers('5')" value="5">
+        <input type="button" id="button4" onclick="numbers('4')" value="4">
+        <br>
+        <input type="button" id="button3" onclick="numbers('3')" value="3">
+        <input type="button" id="button2" onclick="numbers('2')" value="2">
+        <input type="button" id="button1" onclick="numbers('1')" value="1">
+        <br>
+        <input type="button" id="opPunto" onclick="punto('.')" value=".">
+        <input type="button" id="button0" onclick="numbers('0')" value="0">
+        <input type="button" id="opIgual" onclick="resultado()" value="=">
+    </div>
+    <p id="aviso"></p>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
