@@ -1,11 +1,16 @@
 class AppCalculator {
 
     constructor(p) {
-        console.log("Objeto AppCalculator creado")
-        this.pantalla = p;
+        console.log("Objeto AppCalculator creado");
+        this.documento = p;
+        this.init();
+    }
+
+    init(){
+        this.printPantalla("Bienvenidos");
     }
 
     printPantalla(v) {
-        this.pantalla.value = v;
+        this.documento.getElementById("pantallaCalculadora").value = v;
     }
 }
