@@ -1,20 +1,19 @@
 class AppCalculator {
 
-    constructor(doc) {
+    constructor(doc, nombreDePantallaCalculadora) {
         console.log("Objeto AppCalculator creado");
-        this.documento = p;
+        this.documento = doc;
         //Variables
         this.calculo = [""];
         this.posicionCalculo = 0;
         //htmlDocuments
-        this.cookie = doc.cookie;
-        this.avisoHtml = doc.getElementById("aviso");
-        this.pantallaHtml = doc.getElementById("pantallaCalculadora");
-        this.init();
+        this.cookie = this.documento.cookie;
+        this.avisoHtml = this.documento.getElementById("aviso");
+        this.pantallaHtml = this.documento.getElementById(nombreDePantallaCalculadora);
+        this.appLocalDB = new AppLocalDB();
     }
 
     init(){
-
     }
 //Funciones basicas/////////////////////////////////////////////////////////////////////////////////////////////////////
      numbers(valor) {
@@ -42,7 +41,7 @@ class AppCalculator {
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      punto(valor) {
-        if (this.calculo[this.posicionCalculo] != ""){
+        if (this.calculo[this.posicionCalculo] != "" && valor == "."){
             if (this.tienePunto()){
                 this.numbers(valor);
             }
@@ -116,13 +115,13 @@ class AppCalculator {
         let memoria = this.cookie;
         console.log("-Memoria = " + this.cookie );
         if (memoria != ""){
-            numbers(memoria)
+            this.numbers(memoria)
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      memoriaSave() {
         console.log("memoriaSave()");
         console.log("-memoria=" + this.toScreen(false));
-        cookie = this.toScreen(false);
+        this.cookie = this.toScreen(false);
     }
 }
