@@ -112,6 +112,7 @@ class AppCalculator {
 //Funciones de memoria//////////////////////////////////////////////////////////////////////////////////////////////////
      memoriaView() {
         console.log("memoriaview()");
+        this.appLocalDB.getCookies();
         let memoria = this.cookies;
         console.log("-Memoria = " + this.cookies );
         if (memoria != ""){
