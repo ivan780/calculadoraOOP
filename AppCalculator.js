@@ -7,7 +7,7 @@ class AppCalculator {
         this.calculo = [""];
         this.posicionCalculo = 0;
         //htmlDocuments
-        this.cookie = this.documento.cookie;
+        this.cookies = this.documento.cookies;
         this.avisoHtml = this.documento.getElementById("aviso");
         this.pantallaHtml = this.documento.getElementById(nombreDePantallaCalculadora);
         this.appLocalDB = new AppLocalDB();
@@ -90,7 +90,7 @@ class AppCalculator {
          this.calculo = [""];
          this.posicionCalculo = 0;
          this.toScreen(true);
-         this.cookie = "";
+         this.cookies = "";
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      backspace() {
@@ -112,8 +112,8 @@ class AppCalculator {
 //Funciones de memoria//////////////////////////////////////////////////////////////////////////////////////////////////
      memoriaView() {
         console.log("memoriaview()");
-        let memoria = this.cookie;
-        console.log("-Memoria = " + this.cookie );
+        let memoria = this.cookies;
+        console.log("-Memoria = " + this.cookies );
         if (memoria != ""){
             this.numbers(memoria)
         }
@@ -122,6 +122,6 @@ class AppCalculator {
      memoriaSave() {
         console.log("memoriaSave()");
         console.log("-memoria=" + this.toScreen(false));
-        this.cookie = this.toScreen(false);
+        this.cookies = this.toScreen(false);
     }
 }
