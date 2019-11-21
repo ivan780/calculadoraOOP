@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculadora</title>
+    <script src="AppLocalDB.js"></script>
+    <script src="AppCalculator.js"></script>
+    <script src="main.js"></script>
 </head>
-<body>
-<script src="AppLocalDB.js"></script>
-<script src="AppCalculator.js"></script>
-<script src="main.js"></script>
+<body onkeypress="appCal.teclado(event)">
 <div id="calculadora">
 
     <div id="pantalla">
