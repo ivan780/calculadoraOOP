@@ -54,7 +54,7 @@ class AppCalculator {
         return this.calculo.length % 2 === 1;
     }
      tienePunto() {
-        let i = this.calculo[this.posicionCalculo].indexOf(".");
+        var i = this.calculo[this.posicionCalculo].indexOf(".");
         if (i == -1){
             return true
         }else {
@@ -64,9 +64,9 @@ class AppCalculator {
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      toScreen(modo) {
-        let tScreen;
+        var tScreen;
 
-        for (let i = 0; i < this.calculo.length; i++) {
+        for (var i = 0; i < this.calculo.length; i++) {
             console.log("toScreen-> " + this.calculo[i]);
             if (i === 0) {
                 tScreen = this.calculo[i]
@@ -112,17 +112,16 @@ class AppCalculator {
 //Funciones de memoria//////////////////////////////////////////////////////////////////////////////////////////////////
      memoriaView() {
         console.log("memoriaview()");
-        this.appLocalDB.getCookies();
-        let memoria = this.cookies;
-        console.log("-Memoria = " + this.cookies );
+        var memoria = this.appLocalDB.getCookies();
+        console.log("-Memoria = " + memoria);
         if (memoria != ""){
-            this.numbers(memoria)
+            this.numbers(memoria);
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      memoriaSave() {
         console.log("memoriaSave()");
         console.log("-memoria=" + this.toScreen(false));
-        this.cookies = this.toScreen(false);
+        this.appLocalDB.setCookies(this.toScreen(false));
     }
 }
